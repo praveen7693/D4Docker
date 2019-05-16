@@ -6,3 +6,16 @@ docker run --rm -ti \
   quay.io/vektorlab/ctop:latest
 
 docker run -it --pid=host jess/htop
+
+docker version - Look for Docker API
+--------------------------------------------
+
+curl --unix-socket /var/run/docker.sock http:/1.39/images/json
+
+curl --unix-socket /var/run/docker.sock -X POST "http:/v1.39/images/create?fromImage=a
+lpine:3.2"
+
+curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" -d '{"Imag
+e": "alpine:3.2"}' -X POST http:/v1.39/containers/create
+
+curl --unix-socket /var/run/docker.sock http:/1.39/containers/json?all=1

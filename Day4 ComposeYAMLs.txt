@@ -32,51 +32,7 @@ services:
   db:
     image: postgres
 
-Example 3:
-=============
-Docker-compose.yml
---------------------------
-web:
-  image: nginx
-  links:
-    - db
-    - cache
-db:
-  image: postgres
-cache:
-  image: redis
-
-4.
-docker-compose.override.yml
-=========================
-web:
-  volumes:
-    - ".:/code"
-  ports:
-    - "8883:80"
-  environment:
-    DEBUG: "true"
-
-db:
-  ports:
-    - "5432:5432"
-cache:
-  ports:
-    - "6379:6379"
-
-5.
-docker-compose.prod.yml
-========================
-web:
-  ports:
-    - 80:80
-  environment:
-    PRODUCTION: "true"
-cache:
-  environment:
-    TTL: "500"
-
-6.
+3.
 Swarm docker-compose
 ===================
 version: '3'
